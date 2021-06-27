@@ -1,6 +1,8 @@
 package DataStructures;
 
 
+import java.util.NoSuchElementException;
+
 public class Dequeue {
     /* A Linked List based implementation of Dequeue (Double Ended Queue)
      *
@@ -74,7 +76,8 @@ public class Dequeue {
         int value = 0;
 
         if(size==0){
-            throw new IllegalArgumentException();
+            throw new NoSuchElementException();
+
         }
 
         value = sentHead.value;
@@ -102,7 +105,8 @@ public class Dequeue {
         int value = 0;
 
         if(size==0){
-            throw new IllegalArgumentException();
+            throw new NoSuchElementException();
+
         }
 
         value = sentTail.value;
@@ -153,7 +157,7 @@ public class Dequeue {
 
     public int get(int index) {
         // YOUR CODE HERE
-        if(index>size){
+        if (index > size || index < 0) {
             throw new IllegalArgumentException();
         }
 
